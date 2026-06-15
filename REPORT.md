@@ -3,7 +3,7 @@
 
 ---
 
-## 👥 Thông tin nhóm
+##  Thông tin nhóm
 
 | | Thông tin |
 |---|---|
@@ -20,7 +20,7 @@
 
 ---
 
-## 🛠️ Công nghệ & Công cụ sử dụng
+##  Công nghệ & Công cụ sử dụng
 
 | Công cụ | Phiên bản | Mục đích |
 |---------|-----------|---------|
@@ -41,23 +41,23 @@ Hệ thống [stqa.rbc.vn](https://stqa.rbc.vn) sử dụng **Flutter Web với 
 
 ---
 
-## 📋 Kết quả kiểm thử
+##  Kết quả kiểm thử
 
 ### Tổng quan
 
 | Chỉ số | Kết quả |
 |--------|---------|
 | **Tổng số test case** | 12 |
-| **PASSED** ✅ | 12 |
-| **FAILED** ❌ | 0 |
-| **SKIPPED** ⏭️ | 0 |
+| **PASSED**  | 12 |
+| **FAILED**  | 0 |
+| **SKIPPED**  | 0 |
 | **Tỉ lệ thành công** | **100%** |
 
 ---
 
 ### Chi tiết từng Test Case
 
-#### 🔐 Đăng nhập — `test_login.py`
+####  Đăng nhập — `test_login.py`
 
 | TC | Tên test | Mô tả | Kết quả |
 |----|----------|-------|---------|
@@ -65,7 +65,7 @@ Hệ thống [stqa.rbc.vn](https://stqa.rbc.vn) sử dụng **Flutter Web với 
 | TC-02 | `test_login_fail_wrong_password` | Đăng nhập với mật khẩu sai → kiểm tra thông báo "Mật khẩu không đúng" | ✅ PASSED |
 | TC-03 | `test_login_fail_empty_fields` | Đăng nhập với trường trống → kiểm tra thông báo "Vui lòng nhập email và mật khẩu" | ✅ PASSED |
 
-#### 🔍 Tìm kiếm & Lọc — `test_search.py`
+####  Tìm kiếm & Lọc — `test_search.py`
 
 | TC | Tên test | Mô tả | Kết quả |
 |----|----------|-------|---------|
@@ -74,7 +74,7 @@ Hệ thống [stqa.rbc.vn](https://stqa.rbc.vn) sử dụng **Flutter Web với 
 | TC-06 | `test_filter_by_category` | Lọc theo thể loại "Công nghệ" → kiểm tra từng sách đều thuộc thể loại đó | ✅ PASSED |
 | TC-07 | `test_search_by_author` | Tìm kiếm theo tên tác giả "Nguyễn Minh Đức" → kiểm tra có kết quả | ✅ PASSED |
 
-#### 📚 Mượn & Trả sách — `test_borrow_return.py`
+####  Mượn & Trả sách — `test_borrow_return.py`
 
 | TC | Tên test | Mô tả | Kết quả |
 |----|----------|-------|---------|
@@ -82,7 +82,7 @@ Hệ thống [stqa.rbc.vn](https://stqa.rbc.vn) sử dụng **Flutter Web với 
 | TC-09 | `test_view_borrowed_books` | Chuyển sang tab "Mượn / Trả" → kiểm tra có sách đang mượn hiển thị | ✅ PASSED |
 | TC-10 | `test_return_book` | Trả sách trong tab "Mượn / Trả" → kiểm tra snackbar "Trả sách thành công" | ✅ PASSED |
 
-#### ⚙️ Chung — `test_general.py`
+####  Chung — `test_general.py`
 
 | TC | Tên test | Mô tả | Kết quả |
 |----|----------|-------|---------|
@@ -103,11 +103,11 @@ Sau khi xác nhận mượn sách hoặc trả sách, test gọi `all_text_conte
 
 **Cách fix:**
 ```python
-# Trước ❌ — đọc sem_text ngay, không chờ
+# Trước — đọc sem_text ngay, không chờ
 sem_text = " ".join(page.locator("flt-semantics").all_text_contents())
 assert "thành công" in sem_text
 
-# Sau ✅ — chờ snackbar xuất hiện trước
+# Sau — chờ snackbar xuất hiện trước
 wait_for_flutter(page, text="Mượn sách thành công")
 sem_text = " ".join(page.locator("flt-semantics").all_text_contents())
 assert "Mượn sách thành công" in sem_text
@@ -138,10 +138,10 @@ Test `test_login_success` được viết theo mô hình **RIPR**:
 
 ### 2. Smart Wait thay vì `time.sleep()`
 ```python
-# ❌ Hard sleep — chậm, không ổn định
+# Hard sleep — chậm, không ổn định
 time.sleep(5)
 
-# ✅ Smart Wait — nhanh, ổn định
+# Smart Wait — nhanh, ổn định
 wait_for_flutter(page, text="Đăng xuất")
 ```
 
@@ -221,7 +221,7 @@ pytest tests/test_borrow_return.py
 pytest tests/test_general.py
 ```
 
-> ⚠️ Cần có file `.env` với thông tin tài khoản hợp lệ trên [https://stqa.rbc.vn](https://stqa.rbc.vn) trước khi chạy test.
+> .
 
 ---
 
